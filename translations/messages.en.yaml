@@ -1,0 +1,106 @@
+messaccueil: It is time for us to buckle down !
+connexion:
+  phrase: 'You are logged as :'
+  btnco: 'Log in'
+  btndeco: 'Log out'
+
+nav:
+  accueil: 'Home'
+  titre: 'DO IT NOW'
+  pdf: 'PDF Export'
+
+listing:
+  ajout: Add
+  message: I love Symfony
+  thead:
+    id: Id
+    nom: Name
+    catego: Category
+    datedebut: Start date
+    datefin: End date
+    modifier: Updating
+    supprimer: Deleting
+    couleur: Color
+  modi: Update
+  sup: Delete
+  envoi: Send
+
+tache:
+  nom: Task name
+
+flash:
+  tache:
+    ajout: Your task has been added.
+    modif: Your task has been updated.
+    del: Your task has been deleted.
+  user:
+    connec: You are logged in.
+    ajout: The new user has been created.
+    modif: The user has been updated.
+    suppr: The user has been deleted.
+    errReCaptcha: reCaptcha error.
+    doublon: User already exists.
+
+user:
+  form:
+    email: Enter the user's e-mail.
+    password: Type the password.
+    password_repeat: Password confirmation.
+    not_match: The password fields must match.
+
+
+login:
+  sign: Please sign in
+  email: Email
+  pass: Password
+
+titre:
+    home: Welcome
+    login: Log in!
+    listing: List of simple and sweet tasks
+    tag: Tags list
+calendar:
+  close: Close
+  update: Update
+  delete: Delete
+  menu: Calendar
+  
+datatable:
+  processing: Processing...
+  search: "Search:"
+  lengthMenu: Show _MENU_ entries
+  info: Showing _START_ to _END_ of _TOTAL_ entries
+  infoEmpty: Showing 0 to 0 of 0 entries
+  infoFiltered:   (filtered from _MAX_ total entries)
+  infoPostFix:    ""
+  loadingRecords: Loading...
+  zeroRecords:    No matching records found
+  emptyTable:     No data available in table
+  paginate:
+    first:      First
+    previous:   Previous
+    next:       Next
+    last:       Last
+
+general:
+  title:
+    index:
+      tag: Tags
+  btn:
+    update: Update
+    delete: Delete
+    send: Send
+
+tag:
+  btn:
+    add: Ajouter une catégorie
+  alert:
+    alreadyexist: Le nom est déjà utilisé
+    busy: La Catégorie est utilisée
+  success:
+    add: Votre catégorie a bien été ajoutée
+    update: Votre catégorie a bien été modifiée
+  form:
+    label:
+      name: Nom de la catégorie
+      color: Choose color

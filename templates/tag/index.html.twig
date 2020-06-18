@@ -1,0 +1,73 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des Tags
+{% endblock %}
+
+{% block steelsheets %}
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.21/datatables.min.css"/>
+{% endblock %}
+
+{% block body %}
+	<div class="container col-8">
+		<a href="{{ path('tag_create') }}" class="btn btn-primary">Ajouter une catégorie</a>
+		<table class="table table-striped table-borderer" id="tagsTable">
+			<thead>
+				<th>{{ 'listing.thead.id' | trans }}</th>
+                <th>{{ 'listing.thead.catego' | trans }}</th>
+                <th>{{ 'listing.thead.couleur' | trans }}</th>
+                <th></th>
+                <th></th>
+
+				
+			</thead>
+			<tbody>
+				{% if tags is defined %}
+					{% for tag in tags %}
+						<tr>
+                            <th scope="row">{{ tag.id }}</th>
+                            <td>{{ tag.name }}</td>
+                            <td style="background-color:{{ tag.color }}"></td>
+                            <td>
+                                <a href="{{ path('tag_update', {'id': tag.id }) }}" class="btn btn-success">{{ 'general.btn.update' | trans }}</a>
+                            </td>
+                            {% if tag.getTask()[0] is defined %}
+                                <td></td>
+                            {% else %}
+                                <td>
+                                    <a href="{{ path('tag_delete', {'id': tag.id }) }}" class="btn btn-danger">{{ 'general.btn.delete' | trans }}</a>
+                                </td>
+                            {% endif %}
+                        </tr>
+
+					{% endfor %}
+				{% endif %}
+			</tbody>
+		</tbody>
+	</table>
+</div>{% endblock %}
+{% block javascripts %}
+<script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.21/datatables.min.js"></script>
+<script>
+	$(document).ready(function () {
+$('#tagsTable').DataTable({
+language: {
+processing: "{{ 'datatable.processing' | trans }}",
+search: "{{ 'datatable.search' | trans }}",
+lengthMenu: "{{ 'datatable.lengthMenu' | trans }}",
+info: "{{ 'datatable.info' | trans }}",
+infoEmpty: "{{ 'datatable.infoEmpty' | trans }}",
+infoFiltered: "{{ 'datatable.infoFiltered' | trans }}",
+infoPostFix: "{{ 'datatable.infoPostFix' | trans }}",
+loadingRecords: "{{ 'datatable.loadingRecords' | trans }}",
+zeroRecords: "{{ 'datatable.zeroRecords' | trans }}",
+emptyTable: "{{ 'datatable.emptyTable' | trans }}",
+paginate: {
+first: "{{ 'datatable.paginate.first' | trans }}",
+previous: "{{ 'datatable.paginate.previous' | trans }}",
+next: "{{ 'datatable.paginate.next' | trans }}",
+last: "{{ 'datatable.paginate.last' | trans }}"
+}
+}
+});
+});
+</script>{% endblock %}
